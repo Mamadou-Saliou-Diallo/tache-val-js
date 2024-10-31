@@ -1,0 +1,178 @@
+/* --------------------------------------------HOME------------------------------------------ */
+#home{
+    background-color: #0D6EFD;
+    min-height: 500px;
+    height: 100vh;
+}
+
+/* ---------------------------------------------Card------------------------------------------ */
+.card{
+    transition: all 0.5s ease;
+}
+.card:hover{
+    cursor: pointer;
+    box-shadow: 0.5rem 1rem rgba(0, 0, 0, .15);
+    transform: scale(1.1);
+}
+
+/* -----------------------------------------------button---------------------------------------- */
+.btn{
+    transition: all 0.5s ease;
+}
+.btn:hover{
+    transform: scale(1.1);
+}
+
+
+/* --------------------------------------------générer----------------------------------------------- */
+.génère{
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0%;
+    height: 100vh;
+    background-image: url(images/genere.avif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.conainer{
+    width: 400px;
+    height: auto;
+    background-color: #fff;
+    box-shadow: 0 0 8px #000;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+}
+.info,.btnb{
+    width: 100%;
+    padding: 10px;
+    font-style: 16px;
+    border-radius: 5px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+.info{
+    border: 0.5px solid #0005;
+    outline: none;
+}
+.info:focus{
+    background-color: #0005;
+}
+.btnb{
+    border: none;
+    cursor: pointer;
+    background-color: #bc1ae5;
+     color: #fff;
+    
+}
+.btnb:hover{
+    background-color: #bc1ae5A9;
+}
+.qr-img{
+  width: 50%;
+  height: 50%;
+  display: none;
+}
+#result{
+    color: red;
+}  
+
+/* -----------------------historique--------------------------- */
+
+.historique{
+    height: 100vh;
+    background-image: url(images/hist.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+button{
+    text-align: center;
+    margin: auto;
+    color: #000;
+}
+.btn-hist{
+    text-align: center;
+    color: black;
+    background-color: #a1fd0d;
+    font-weight: bold;
+}
+.hitoriqueQrCode{
+    display: none;
+}
+#qrCodeHistoryContainer {
+    margin-top: 20px;
+    text-align: center;
+}
+#qrCodeHistory img {
+    width: 80px;
+    height: 80px;
+    margin: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+
+/* -----------------------------------page lecture--------------------------------- */
+#lecture{
+    height: 100vh;
+}
+#lire{
+    background-image: url('images/lireqr.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* h1{
+     font-size: 40px;
+    background-color: aliceblue;
+    color: black; 
+} */
+/* 
+form{
+    position: absolute;
+    background-color: antiquewhite;
+    left: 37%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+img{
+    width: 350px;
+    margin: 5%;
+}
+
+input{
+    margin: 2%;
+    width: 90%; 
+    font-size: 20px;
+}
+
+button{
+    border-radius: 15px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    font-size: 20px;
+    width: 200px;
+    padding: 20px;
+    cursor: pointer;
+    margin: 1%;
+}  */
+
+/* -------------------------------------------------interface accueil----------------------------- */
+
+/* .img-ac{
+    background-image: url('images/acc.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 68vh;
+} */
