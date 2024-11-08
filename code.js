@@ -122,7 +122,6 @@ function handleImageUpload(event) {
             
             const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
             const code = jsQR(imageData.data, imageData.width, imageData.height);
-
             if (code) {
                 resultText.textContent = `Résultat : ${code.data}`;
             } else {
@@ -141,3 +140,75 @@ activateCameraButton.addEventListener("click", () => {
 });
 
 fileInput.addEventListener("change", handleImageUpload);
+
+
+
+// ---------------------------contact---------------------------------------
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Récupération du formulaire
+    const form = document.getElementById('contact-form');
+    const successMessage = document.getElementById('success-message');
+    const errorMessage = document.getElementById('error-message');
+
+    // Validation et soumission du formulaire
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Empêche l'envoi du formulaire
+
+        // Validation du formulaire (simple exemple)
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        let isValid = true;
+
+        // Validation du nom
+        if (name === "") {
+            isValid = false;
+            document.getElementById('name').classList.add('is-invalid');
+        } else {
+            document.getElementById('name').classList.remove('is-invalid');
+        }
+
+        // Validation de l'email
+        if (email === "" || !validateEmail(email)) {
+            isValid = false;
+            document.getElementById('email').classList.add('is-invalid');
+        } else {
+            document.getElementById('email').classList.remove('is-invalid');
+        }
+
+        // Validation du message
+        if (message === "") {
+            isValid = false;
+            document.getElementById('message').classList.add('is-invalid');
+        } else {
+            document.getElementById('message').classList.remove('is-invalid');
+        }
+
+        // Si tout est valide
+        if (isValid) {
+            // Affiche le message de succès
+            successMessage.style.display = 'block';
+            errorMessage.style.display = 'none';
+
+            // Vous pouvez envoyer les données par AJAX ou autre ici
+
+            // Réinitialiser le formulaire
+            form.reset();
+        } else {
+            // Affiche le message d'erreur
+            successMessage.style.display = 'none';
+            errorMessage.style.display = 'block';
+        }
+    });
+
+    // Fonction de validation d'email simple
+    function validateEmail(email) {
+        const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        return regex.test(email);
+    }
+});
+
+
+
