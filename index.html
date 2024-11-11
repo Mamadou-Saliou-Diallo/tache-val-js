@@ -1,189 +1,47 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-       <!-- CSS File -->
-       <link rel="stylesheet" href="style.css">
-    <title>qr-code</title>
-  </head>
-  <body>
-    <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white" id="navbar">
-        <div class="container">
-          <a class="navbar-brand fs-4 fw-bolder" href="#">qrcode</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="connexion.html">Connexion</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#home">Accueil</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#generer">Génèrer</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#lecture">Lire_Qr code</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#historique">Gestion-Qr code</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#contact">Contact</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      <!----------------------------------Home----------------------------------- -->
-      <section id="home" class="py-5">
-        <div class="container">
-            <div class="row d-flex align-itemes-center justify-content-center">
-                <div class="col-md-6">
-                    <h1 class="display-4 fw-bolder text-white">Vos données, un scan suffit</h1>
-                    <p class="lead text-white mb-5">"Vos données, un scan suffit. Accédez à l'information rapidement avec 
-                        notre solution QR intuitive. Générer, partager et lire des QR codes n'a jamais été aussi simple. Gagnez du temps et
-                        connectez-vous en un seul geste, partout et à tout moment."
-                    </p>
-                    <a href="" class="btn btn-light btn-lg">Get Stared</a>
-                    <a href="" class="btn btn-outline-light ms-2 btn-lg">About US</a>
-                </div>
-                <div class="col-md-6">
-                    <img src="images/qrcode1.jpg" alt="" class="w-100 mt-4">
-                </div>
-            </div>
-        </div>
-      </section>
-
-      <!----------------------------------------Générer--------------------------->
-       <section class="génère" id="generer"> 
-        <div class="conainer">
-            <h1>Générer un code QR</h1>
-            <input type="text" class="info" id="info" placeholder="Entrez une information">
-            <button type="submit" class="btnb" id="btnb">Générer</button>
-            <img src="#" alt="image du qr-code" class="qr-img" id="qr-img">
-        </div>
-    </section>
-    
-
-      <!-- -------------------------------Lecture --------------------------------->
-      <section id="lecture" class="py-5">
-        <div class="container my-5 py-5">
-            <div class="row">
-                <div class="col-md-6">
-                    <h1>Lire un QR Code</h1><br>
-
-                    <!-- Bouton pour activer la caméra -->
-                    <button id="activateCameraButton">Scanner ici ⤵️</button><br><br>
-                    
-                    <video id="video" width="400" height="300" autoplay hidden></video><br>
-                    <canvas id="canvas" hidden></canvas>
-                    <strong></strong><p id="result">Résultat : Aucun QR code détecté</p></strong>
-                
-                    <!-- Ajout de l'input pour choisir une image -->
-                    <input type="file" id="fileInput" accept="image/*">
-                    
-                    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
-                </div>
-                <div class="col-md-6" id="lire">
-                </div>
-            </div>
-        </div>
-      </section>
-
-      <!-- ------------------------------historique----------------------------------- -->
-       <section id="historique" class="historique mb-4">
-        <!-- <div class="container my-5 py-5">
-            <div class="row mb-5"> -->
-                <div class="col-12">
-                    <!-- Bouton pour afficher/masquer l'historique des QR codes -->
-                    <button id="toggleHistoryButton" class="btn-hist">Voir l'ensemble des QR codes générés</button>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Qr code Connexion</title>
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class="container" id="connexion">
+            <h2 id="form-title">Connexion</h2>
             
-                    <!-- Section pour afficher l'historique des QR codes -->
-                    <div id="qrCodeHistoryContainer" class="hitoriqueQrCode">
-                        <h2>Historique des QR Codes</h2>
-                        <div id="qrCodeHistory"></div>
-                    </div>
-                </div>
-       </section>
-        
-       <!-- ------------------------------contact--------------------------- -->
-           <!-- Container principal -->
-           <div class="container my-5" id="contact">
-               <h2 class="text-center mb-4">Contactez-nous</h2>
-       
-               <!-- Formulaire de contact -->
-               <form id="contact-form">
-                   <div class="mb-3">
-                       <label for="name" class="form-label">Nom</label>
-                       <input type="text" class="form-control" id="name" name="name" placeholder="Entrez votre nom complet" required>
-                       <div class="invalid-feedback">Veuillez entrer votre nom.</div>
-                   </div>
-       
-                   <div class="mb-3">
-                       <label for="email" class="form-label">E-mail</label>
-                       <input type="email" class="form-control" id="email" name="email" placeholder="Entrez votre e-mail" required>
-                       <div class="invalid-feedback">Veuillez entrer un e-mail valide.</div>
-                   </div>
-       
-                   <div class="mb-3">
-                       <label for="message" class="form-label">Message</label>
-                       <textarea class="form-control" id="message" name="message" rows="4" placeholder="Votre message" required></textarea>
-                       <div class="invalid-feedback">Veuillez entrer un message.</div>
-                   </div>
-       
-                   <button type="submit" class="btn btn-primary">Envoyer</button>
-               </form>
-       
-               <!-- Message de confirmation -->
-               <div id="success-message" class="alert alert-success mt-3" style="display: none;">
-                   Votre message a bien été envoyé !
-               </div>
-               <div id="error-message" class="alert alert-danger mt-3" style="display: none;">
-                   Une erreur est survenue. Veuillez réessayer.
-               </div>
-        </div>
-       
-       <!-- ----------------------------footer--------------------- -->
-       <footer class="footer bg-primary pt-3">
-         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h2 class="lead text-center text-white"  id="copyright">Copyright @ 2024 Mamadou-Saliou-DIALLO_Qr-code | ALL Right Reserved</h2>
-                </div>
+            <!-- Formulaire de connexion -->
+            <div id="login-form">
+            <form id="login">
+                <label for="email-login">Adresse email</label>
+                <input type="email" id="email-login" placeholder="Entrez votre email" required />
+                
+                <label for="password-login">Mot de passe</label>
+                <input type="password" id="password-login" placeholder="Entrez votre mot de passe" required />
+                
+                <button type="submit">Se connecter</button>
+            </form>
+            <p>Pas encore de compte? <a href="#" id="to-register">Inscrivez-vous</a></p>
             </div>
-         </div>
-       </footer>
-    <!-- Optional JavaScript; choose one of the two! -->
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <!-- -------------------------------------------Scroll-------------------------------- -->
+            <!-- Formulaire d'inscription -->
+            <div id="register-form" style="display: none;">
+            <form id="register">
+                <label for="full-name">Nom complet</label>
+                <input type="text" id="full-name" placeholder="Entrez votre nom complet" required />
+                
+                <label for="email-register">Adresse email</label>
+                <input type="email" id="email-register" placeholder="Entrez votre email" required />
+                
+                <label for="password-register">Mot de passe</label>
+                <input type="password" id="password-register" placeholder="Entrez votre mot de passe" required />
+                
+                <button type="submit">S'inscrire</button>
+            </form>
+            <p>Vous avez déjà un compte? <a href="#" id="to-login">Connectez-vous</a></p>
+            </div>
+  </div>
 
-     <script>
-        window.onscroll = function (){
-            scrollFunction();
-        }
-        function scrollFunction() {
-           if(document.body.scrollTop > 50 || document.documentElement.scrollTop > 50)
-           {
-            document.getElementById("navbar").classList.add("fixed-top", "shadow");
-           } 
-           else{
-            document.getElementById("navbar").classList.remove("fixed-top", "shadow");
-           }
-        }
-     </script>
-    <script src="code.js"> 
-        window.location.href = "connexion.html";
-    </script>
-  </body>
+  <script src="code2.js"></script>
+</body>
 </html>
